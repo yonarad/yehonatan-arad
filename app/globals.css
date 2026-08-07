@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root { --ink: #121315; --paper: #f5f3ee; --lime: #d8ff47; --line: rgba(18,19,21,.18); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; direction: rtl; }
+a { color: inherit; text-decoration: none; }
+.nav { height: 84px; display: flex; align-items: center; justify-content: space-between; padding: 0 5.5vw; position: absolute; inset: 0 0 auto; z-index: 3; direction: ltr; }
+.brand { display:grid; place-items:center; width:42px; height:42px; color:var(--paper); background:var(--ink); border-radius:50%; font-weight:900; font-size:18px; }
+.nav-link { direction:rtl; font-size:14px; font-weight:700; border-bottom:1px solid var(--ink); padding:5px 0; }
+.nav-link span { padding-right:8px; }
+.hero { min-height: 760px; padding: 168px 11vw 62px; background: var(--lime); overflow:hidden; position:relative; display:flex; flex-direction:column; justify-content:space-between; }
+.eyebrow, .section-label { margin:0; font-size:12px; letter-spacing:.08em; font-weight:800; }
+.hero h1 { position:relative; z-index:1; margin:26px 0; font-size:clamp(64px, 11vw, 162px); line-height:.89; letter-spacing:-.075em; font-weight:900; }
+em { font-family: Georgia, "Times New Roman", serif; font-weight:400; letter-spacing:-.06em; }
+.hero-bottom { position:relative; z-index:1; display:flex; align-items:end; justify-content:space-between; gap:28px; direction:rtl; }
+.hero-bottom p { max-width:280px; margin:0; font-size:17px; line-height:1.45; font-weight:600; }
+.round-link { width:58px; height:58px; display:grid; place-items:center; border:1px solid var(--ink); border-radius:50%; font-size:30px; transition:.25s; }
+.round-link:hover { background:var(--ink); color:var(--lime); transform:translateY(4px); }
+.orb { position:absolute; border-radius:50%; border:1px solid var(--ink); }
+.orb-one { width:43vw; height:43vw; max-width:620px; max-height:620px; left:-12vw; top:13%; background:var(--paper); }
+.orb-two { width:20vw; height:20vw; min-width:190px; min-height:190px; right:-5vw; bottom:13%; background:var(--ink); }
+.grid-mark { position:absolute; width:140px; height:140px; left:50%; top:45%; opacity:.8; background:linear-gradient(90deg,transparent 49%,var(--ink) 50%,transparent 51%),linear-gradient(0deg,transparent 49%,var(--ink) 50%,transparent 51%); background-size:33.33% 33.33%; transform:rotate(15deg); }
+.about { display:grid; grid-template-columns:1fr 2fr; gap:50px; padding:150px 11vw; border-bottom:1px solid var(--line); }
+.about-copy h2, .closing h2 { margin:0 0 28px; font-size:clamp(48px, 7vw, 100px); line-height:.92; letter-spacing:-.07em; }
+.about-copy p { max-width:450px; margin:0; font-size:20px; line-height:1.55; font-weight:500; }
+.principles { padding:0 5.5vw; display:grid; grid-template-columns:repeat(3,1fr); }
+.principle { min-height:315px; padding:34px 5.5vw 42px 22px; border-left:1px solid var(--line); display:flex; flex-direction:column; }
+.principle:first-child { border-right:1px solid var(--line); }
+.principle span { font-size:12px; font-weight:800; }
+.principle h3 { margin: auto 0 10px; font-size:28px; letter-spacing:-.04em; }
+.principle p { max-width:210px; margin:0; font-size:15px; line-height:1.45; }
+.closing { padding:150px 11vw 120px; background:var(--ink); color:var(--paper); }
+.closing h2 { margin-top:28px; }
+.contact { display:inline-flex; align-items:center; gap:20px; margin-top:35px; color:var(--lime); font-size:clamp(22px,3vw,40px); font-weight:800; border-bottom:2px solid var(--lime); padding-bottom:9px; direction:ltr; }
+.contact span { font-size:.8em; }
+footer { padding:22px 5.5vw; display:flex; justify-content:space-between; background:var(--ink); color:var(--paper); border-top:1px solid rgba(255,255,255,.18); font-size:12px; direction:ltr; }
+@media (max-width: 700px) { .nav { padding:0 7vw; } .hero { min-height:680px; padding:145px 8vw 40px; } .hero h1 { font-size:22vw; } .hero-bottom p { font-size:15px; } .orb-one { width:72vw; height:72vw; top:22%; left:-24vw; } .orb-two { right:-25vw; bottom:18%; } .grid-mark { left:57%; top:50%; width:90px; height:90px; } .about { display:block; padding:90px 8vw; } .about-copy { margin-top:52px; } .about-copy p { font-size:18px; } .principles { display:block; padding:0 8vw; } .principle { min-height:210px; padding:30px 0; border-right:0 !important; border-left:0; border-bottom:1px solid var(--line); } .principle:last-child { border-bottom:0; } .closing { padding:90px 8vw; } footer { padding:20px 8vw; } }
