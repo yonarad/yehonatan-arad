@@ -45,7 +45,7 @@ export default function Home() {
       <section className="closing">
         <p className="section-label">02 / בואו נדבר</p>
         <h2>יש רעיון טוב?<br /><em>אני בעד.</em></h2>
-        <a className="contact" href="mailto:hello@example.com">hello@example.com <span>↗</span></a>
+        <p className="contact">דברים טובים בדרך <span>↗</span></p>
       </section>
 
       <footer>
