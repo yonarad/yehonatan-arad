@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yonar — יוצרים חוויות שזוכרים",
-  description: "האתר האישי של Yonar.",
+  title: "Yehonatan Arad — Software & QA Professional",
+  description: "Personal website of Yehonatan Arad, software developer and QA professional.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="he" dir="rtl">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -1,57 +1,66 @@
-const highlights = [
-  { number: "01", title: "חשיבה בהירה", copy: "מפרקים רעיון מורכב לחוויה פשוטה, שימושית ונעימה." },
-  { number: "02", title: "אהבה לפרטים", copy: "מהרעיון הראשון ועד המגע הקטן שעושה את ההבדל." },
-  { number: "03", title: "תנועה קדימה", copy: "בונים, לומדים ומשפרים — בקצב שמייצר תוצאות." },
+const links = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/yehonatan-arad" },
+  { label: "Facebook", href: "https://m.facebook.com/yonarad" },
+  { label: "X / Twitter", href: "https://x.com/yonarad1" },
 ];
 
 export default function Home() {
   return (
     <main>
-      <nav className="nav" aria-label="ניווט ראשי">
-        <a className="brand" href="#top" aria-label="Yonar — לעמוד הראשי">Y.</a>
-        <a className="nav-link" href="#about">קצת עליי <span>↙</span></a>
+      <nav className="nav" aria-label="Main navigation">
+        <a className="monogram" href="#top" aria-label="Yehonatan Arad home">YA</a>
+        <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <span>↗</span></a>
       </nav>
 
       <section className="hero" id="top">
-        <p className="eyebrow">שלום, אני Yonar</p>
-        <h1>יוצר חוויות<br /><em>שזוכרים.</em></h1>
-        <div className="hero-bottom">
-          <p>מקום קטן ברשת לרעיונות, מוצרים ודברים טובים שנמצאים בדרך.</p>
-          <a className="round-link" href="#about" aria-label="לגלול לקצת עליי">↓</a>
+        <p className="kicker">Independent software professional · Israel</p>
+        <div className="hero-title">
+          <h1>Yehonatan<br /><em>Arad.</em></h1>
+          <div className="portrait" aria-label="Yehonatan Arad monogram portrait">
+            <span>YA</span>
+            <i />
+            <i />
+          </div>
         </div>
-        <div className="orb orb-one" />
-        <div className="orb orb-two" />
-        <div className="grid-mark" aria-hidden="true" />
-      </section>
-
-      <section className="about" id="about">
-        <p className="section-label">01 / מי אני</p>
-        <div className="about-copy">
-          <h2>סקרנות היא<br />נקודת ההתחלה.</h2>
-          <p>אני מאמין שהדברים הדיגיטליים הטובים ביותר מתחילים בשאלה נכונה — ומסתיימים בחוויה שמרגישה טבעית לגמרי.</p>
+        <div className="hero-footer">
+          <p>Software developer &amp; QA professional with 16 years of experience building, testing, and improving digital products.</p>
+          <a href="#about" className="scroll" aria-label="Explore profile">↓</a>
         </div>
       </section>
 
-      <section className="principles" aria-label="עקרונות עבודה">
-        {highlights.map((item) => (
-          <article className="principle" key={item.number}>
-            <span>{item.number}</span>
-            <h3>{item.title}</h3>
-            <p>{item.copy}</p>
-          </article>
-        ))}
+      <section id="about" className="about section">
+        <p className="label">01 / ABOUT</p>
+        <div>
+          <h2>Building with care.<br />Testing with <em>intent.</em></h2>
+          <p className="lead">I’m Yehonatan Arad, a software developer and QA professional. For over 16 years, I’ve worked at the intersection of reliable engineering, thoughtful product quality, and practical problem-solving.</p>
+        </div>
       </section>
 
-      <section className="closing">
-        <p className="section-label">02 / בואו נדבר</p>
-        <h2>יש רעיון טוב?<br /><em>אני בעד.</em></h2>
-        <p className="contact">דברים טובים בדרך <span>↗</span></p>
+      <section className="work section">
+        <p className="label">02 / SELECTED WORK</p>
+        <article className="project">
+          <div>
+            <p className="project-no">01</p>
+            <h2>HebSync</h2>
+            <p>Hebrew Calendar Sync</p>
+          </div>
+          <div className="project-detail">
+            <p>A project created to bring the Hebrew calendar into everyday scheduling.</p>
+            <a href="https://hebsync.org" target="_blank" rel="noreferrer">Visit hebsync.org <span>↗</span></a>
+          </div>
+        </article>
       </section>
 
-      <footer>
-        <span>© 2026 Yonar</span>
-        <span>Built with intention.</span>
-      </footer>
+      <section className="connect section">
+        <p className="label">03 / CONNECT</p>
+        <h2>Let’s stay<br /><em>connected.</em></h2>
+        <div className="link-list">
+          <a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <span>↗</span></a>
+          {links.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <span>↗</span></a>)}
+        </div>
+      </section>
+
+      <footer><span>© 2026 Yehonatan Arad</span><span>Software · Quality · Curiosity</span></footer>
     </main>
   );
 }
