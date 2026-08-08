@@ -15,7 +15,7 @@ a:focus-visible { outline:3px solid var(--coral); outline-offset:4px; }
 .email span { margin-left:7px; }
 .hero { min-height:770px; padding:145px 10.6vw 55px; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; background:var(--acid); position:relative; isolation:isolate; }
 .hero:before { content:""; position:absolute; z-index:-1; width:min(48vw,690px); aspect-ratio:1; top:11%; right:-10vw; border:1px solid var(--ink); border-radius:50%; background:var(--paper); }
-.hero:after { content:""; position:absolute; z-index:-1; width:260px; height:260px; left:-75px; bottom:86px; background:var(--ink); border-radius:50%; }
+.hero:after { content:""; position:absolute; z-index:-1; width:260px; height:260px; left:-195px; bottom:86px; background:var(--ink); border-radius:50%; }
 .eyebrow,.section-label { margin:0; font-size:11px; font-weight:900; letter-spacing:.105em; }
 .eyebrow { display:flex; align-items:center; gap:9px; }.eyebrow span { width:8px; height:8px; border-radius:50%; background:var(--coral); box-shadow:0 0 0 5px rgba(255,112,86,.16); }
 .hero-main { display:flex; align-items:end; justify-content:space-between; gap:30px; }
