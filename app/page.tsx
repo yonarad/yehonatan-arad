@@ -19,13 +19,12 @@ export default function Home() {
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </div>
-        <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <span aria-hidden="true">↗</span></a>
+        <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <span className="arrow-mark" aria-hidden="true" /></a>
       </nav>
 
       <section className="hero" id="top">
-        <p className="eyebrow"><span /> INDEPENDENT SOFTWARE PROFESSIONAL · ISRAEL</p>
         <div className="hero-main">
-          <h1>Yehonatan<br /><em>Arad.</em></h1>
+          <h1>Yehonatan<br /><span className="accent">Arad.</span></h1>
           <div className="mark">
             <Image
               src="/yehonatan-arad.jpg"
@@ -39,18 +38,17 @@ export default function Home() {
         </div>
         <div className="hero-bottom">
           <p>Software developer and QA professional with <strong>16 years</strong> of experience making digital products clearer, sturdier, and better to use.</p>
-          <a className="scroll" href="#about" aria-label="Explore profile">Scroll <span>↓</span></a>
+          <a className="scroll" href="#about" aria-label="Explore profile">Explore <span className="down-mark" aria-hidden="true" /></a>
         </div>
       </section>
 
       <section className="ticker" aria-label="Professional focus">
-        <span>SOFTWARE DEVELOPMENT</span><i>✦</i><span>QUALITY ASSURANCE</span><i>✦</i><span>PRODUCT THINKING</span><i>✦</i><span>16 YEARS OF PRACTICE</span>
+        <span>SOFTWARE DEVELOPMENT</span><i /><span>QUALITY ASSURANCE</span><i /><span>PRODUCT THINKING</span><i /><span>16 YEARS OF PRACTICE</span>
       </section>
 
       <section id="about" className="about section">
-        <p className="section-label">01 / PROFILE</p>
         <div className="about-content">
-          <h2>Build it right.<br />Then make it <em>better.</em></h2>
+          <h2>Build it right.<br />Then make it <span className="accent">better.</span></h2>
           <div className="about-grid">
             <p className="lead">I’m Yehonatan Arad. My work sits where engineering discipline and a user’s real experience meet. I enjoy shaping useful software, interrogating its weak spots, and helping good ideas become reliable products.</p>
             <aside className="fact-card">
@@ -62,39 +60,39 @@ export default function Home() {
       </section>
 
       <section className="practice section">
-        <p className="section-label">02 / PRACTICE</p>
-        <div className="practice-list">
+        <div className="practice-content">
+          <h2>How I work.</h2>
+          <div className="practice-list">
           {practices.map(([number, title, description]) => (
             <article key={number}>
-              <span>{number}</span>
               <h3>{title}</h3>
               <p>{description}</p>
             </article>
           ))}
+          </div>
         </div>
       </section>
 
       <section id="work" className="work">
-        <div className="work-heading"><p className="section-label">03 / SELECTED WORK</p><p>One focused project, created to solve a recurring everyday problem.</p></div>
+        <div className="work-heading"><h2>Selected work.</h2><p>One focused project, created to solve a recurring everyday problem.</p></div>
         <article className="project">
           <div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div>
           <div className="project-copy">
-            <p className="project-index">01 — INDEPENDENT PROJECT</p>
+            <p className="project-index">INDEPENDENT PROJECT</p>
             <h2>Heb<span>Sync</span></h2>
             <p className="project-subtitle">Hebrew Calendar Sync</p>
             <p className="project-description">HebSync brings the Hebrew calendar into everyday scheduling, making it easier to keep meaningful dates present in the calendar you already use.</p>
-            <a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">Explore HebSync <span aria-hidden="true">↗</span></a>
+            <a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">Explore HebSync <span className="arrow-mark" aria-hidden="true" /></a>
           </div>
         </article>
       </section>
 
       <section id="contact" className="contact section">
-        <p className="section-label">04 / CONTACT</p>
         <div className="contact-content">
-          <h2>A thoughtful<br />conversation <em>starts here.</em></h2>
-          <a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <span aria-hidden="true">↗</span></a>
+          <h2>A thoughtful<br />conversation <span className="accent">starts here.</span></h2>
+          <a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <span className="arrow-mark" aria-hidden="true" /></a>
           <div className="social-links">
-            {socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
+            {socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <span className="arrow-mark" aria-hidden="true" /></a>)}
           </div>
         </div>
       </section>
