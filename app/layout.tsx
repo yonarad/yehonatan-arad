@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist_Mono, Heebo } from "next/font/google";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -10,6 +10,11 @@ const bricolage = Bricolage_Grotesque({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const heebo = Heebo({
+  variable: "--font-heebo",
+  subsets: ["hebrew", "latin"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage.variable} ${geistMono.variable} antialiased`}
+        className={`${bricolage.variable} ${geistMono.variable} ${heebo.variable} antialiased`}
       >
         {children}
       </body>
