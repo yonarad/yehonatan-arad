@@ -26,8 +26,15 @@ export default function Home() {
         <p className="eyebrow"><span /> INDEPENDENT SOFTWARE PROFESSIONAL · ISRAEL</p>
         <div className="hero-main">
           <h1>Yehonatan<br /><em>Arad.</em></h1>
-          <div className="mark" aria-label="Yehonatan Arad monogram">
-            <span>YA</span><i /><i /><b />
+          <div className="mark">
+            <Image
+              src="/yehonatan-arad.jpg"
+              alt="Yehonatan Arad"
+              width={400}
+              height={400}
+              priority
+              className="profile-photo"
+            />
           </div>
         </div>
         <div className="hero-bottom">
@@ -96,3 +103,4 @@ export default function Home() {
     </main>
   );
 }
+import Image from "next/image";
