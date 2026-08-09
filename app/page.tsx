@@ -82,7 +82,7 @@ export default function Home() {
       </nav>
 
       <section className="hero" id="top">
-        <div className="hero-main"><h1>Yehonatan<br /><span className="accent">Arad.</span></h1><div className="mark"><Image src="/yehonatan-arad.jpg" alt="Yehonatan Arad" width={400} height={400} priority className="profile-photo" /></div></div>
+        <div className="hero-main"><h1 className={isHebrew ? "hebrew-name" : undefined}>{isHebrew ? <>יהונתן<br /><span className="accent">ארד.</span></> : <>Yehonatan<br /><span className="accent">Arad.</span></>}</h1><div className="mark"><Image src="/yehonatan-arad.jpg" alt="Yehonatan Arad" width={400} height={400} priority className="profile-photo" /></div></div>
         <div className="hero-bottom"><p>{t.intro}</p><a className="scroll" href="#about" aria-label={t.explore}>{t.explore} <span className="down-mark" aria-hidden="true" /></a></div>
       </section>
 
