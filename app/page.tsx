@@ -4,10 +4,25 @@ import Image from "next/image";
 import { useState } from "react";
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/yehonatan-arad" },
-  { label: "Facebook", href: "https://m.facebook.com/yonarad" },
-  { label: "X / Twitter", href: "https://x.com/yonarad1" },
-];
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/yehonatan-arad", icon: "linkedin" },
+  { label: "Facebook", href: "https://m.facebook.com/yonarad", icon: "facebook" },
+  { label: "X / Twitter", href: "https://x.com/yonarad1", icon: "x" },
+  { label: "Telegram: @Yonarad1", href: "https://t.me/Yonarad1", icon: "telegram" },
+] as const;
+
+function MailIcon() {
+  return <svg className="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5" stroke="currentColor" strokeWidth="1.9" /><path d="m4.5 7 7.5 6 7.5-6" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function SocialIcon({ kind }: { kind: "linkedin" | "facebook" | "x" | "telegram" }) {
+  const paths = {
+    linkedin: <path d="M5.2 3.5a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4ZM3.7 8.2h3V20h-3V8.2Zm4.9 0h2.9v1.6h.1c.4-.8 1.4-1.9 3.2-1.9 3.4 0 4 2.2 4 5.2V20h-3v-6c0-1.4 0-3.2-2-3.2s-2.3 1.5-2.3 3.1V20h-3V8.2Z" />,
+    facebook: <path d="M13.7 20v-7h2.4l.4-2.8h-2.8V8.4c0-.8.2-1.4 1.4-1.4h1.5V4.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2h-2.5V13h2.5v7h3Z" />,
+    x: <path d="M18.9 3h2.8l-6.2 7.1 7.3 10.9h-5.7l-4.5-6.6L6.9 21H4.1l6.6-7.5L3.7 3h5.8l4.1 6.1L18.9 3Zm-1 16.2h1.6L8.6 4.7H6.9l11 14.5Z" />,
+    telegram: <path d="m21.5 4.5-3 15.1c-.2 1.1-.8 1.4-1.7.9l-4.7-3.4-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.8 8.8-7.9c.4-.3-.1-.5-.6-.2L6.5 13.6 1.8 12c-1-.3-1-1 .2-1.5L20.5 3.4c.9-.3 1.7.2 1 1.1Z" />,
+  };
+  return <svg className="social-icon" viewBox="0 0 24 24" aria-hidden="true">{paths[kind]}</svg>;
+}
 
 function ExternalArrow() {
   return (
@@ -58,7 +73,7 @@ export default function Home() {
         <div className="nav-links"><a href="#work">{t.navWork}</a><a href="#contact">{t.navContact}</a></div>
         <div className="nav-actions">
           <button className="language-toggle" type="button" onClick={() => setLanguage(isHebrew ? "en" : "he")} aria-label={isHebrew ? "Switch to English" : "החלפה לעברית"}>{t.switchLanguage}</button>
-          <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <ExternalArrow /></a>
+          <a href="mailto:yonarad@gmail.com" className="email" aria-label="Send email to yonarad@gmail.com"><MailIcon /></a>
         </div>
       </nav>
 
@@ -75,7 +90,7 @@ export default function Home() {
 
       <section id="work" className="work"><div className="work-heading"><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div><article className="project"><div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div><div className="project-copy"><div className="project-kicker"><Image src="/hebsync-logo.png" alt="HebSync logo" width={112} height={112} className="hebsync-logo" /><p className="project-index">{t.projectIndex}</p></div><h2>Heb<span>Sync</span></h2><p className="project-subtitle">{t.projectSubtitle}</p><p className="project-description">{t.projectDescription}</p><a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">{t.projectLink} <ExternalArrow /></a></div></article></section>
 
-      <section id="contact" className="contact section"><div className="contact-content"><h2>{t.contactTitle}</h2><a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <ExternalArrow /></a><div className="social-links">{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <ExternalArrow /></a>)}</div></div></section>
+      <section id="contact" className="contact section"><div className="contact-content"><h2>{t.contactTitle}</h2><a className="contact-email" href="mailto:yonarad@gmail.com" aria-label="Send email to yonarad@gmail.com"><MailIcon /></a><div className="social-links">{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer" aria-label={link.label}><SocialIcon kind={link.icon} /></a>)}</div></div></section>
 
       <footer><span>&copy; 2026 Yehonatan Arad</span><span>{t.footer}</span></footer>
     </main>
