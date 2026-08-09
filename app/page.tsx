@@ -9,6 +9,14 @@ const socialLinks = [
   { label: "X / Twitter", href: "https://x.com/yonarad1" },
 ];
 
+function ExternalArrow() {
+  return (
+    <svg className="external-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M5 15 15 5M7 5h8v8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 const content = {
   en: {
     navWork: "Work", navContact: "Contact", switchLanguage: "עברית", homeLabel: "Yehonatan Arad home",
@@ -50,7 +58,7 @@ export default function Home() {
         <div className="nav-links"><a href="#work">{t.navWork}</a><a href="#contact">{t.navContact}</a></div>
         <div className="nav-actions">
           <button className="language-toggle" type="button" onClick={() => setLanguage(isHebrew ? "en" : "he")} aria-label={isHebrew ? "Switch to English" : "החלפה לעברית"}>{t.switchLanguage}</button>
-          <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <span className="arrow-mark" aria-hidden="true" /></a>
+          <a href="mailto:yonarad@gmail.com" className="email">yonarad@gmail.com <ExternalArrow /></a>
         </div>
       </nav>
 
@@ -65,9 +73,9 @@ export default function Home() {
 
       <section className="practice section"><div className="practice-content"><h2>{t.practiceTitle}</h2><div className="practice-list">{t.practices.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
 
-      <section id="work" className="work"><div className="work-heading"><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div><article className="project"><div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div><div className="project-copy"><div className="project-kicker"><Image src="/hebsync-logo.png" alt="HebSync logo" width={112} height={112} className="hebsync-logo" /><p className="project-index">{t.projectIndex}</p></div><h2>Heb<span>Sync</span></h2><p className="project-subtitle">{t.projectSubtitle}</p><p className="project-description">{t.projectDescription}</p><a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">{t.projectLink} <span className="arrow-mark" aria-hidden="true" /></a></div></article></section>
+      <section id="work" className="work"><div className="work-heading"><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div><article className="project"><div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div><div className="project-copy"><div className="project-kicker"><Image src="/hebsync-logo.png" alt="HebSync logo" width={112} height={112} className="hebsync-logo" /><p className="project-index">{t.projectIndex}</p></div><h2>Heb<span>Sync</span></h2><p className="project-subtitle">{t.projectSubtitle}</p><p className="project-description">{t.projectDescription}</p><a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">{t.projectLink} <ExternalArrow /></a></div></article></section>
 
-      <section id="contact" className="contact section"><div className="contact-content"><h2>{t.contactTitle}</h2><a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <span className="arrow-mark" aria-hidden="true" /></a><div className="social-links">{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <span className="arrow-mark" aria-hidden="true" /></a>)}</div></div></section>
+      <section id="contact" className="contact section"><div className="contact-content"><h2>{t.contactTitle}</h2><a className="contact-email" href="mailto:yonarad@gmail.com">yonarad@gmail.com <ExternalArrow /></a><div className="social-links">{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer">{link.label} <ExternalArrow /></a>)}</div></div></section>
 
       <footer><span>&copy; 2026 Yehonatan Arad</span><span>{t.footer}</span></footer>
     </main>
