@@ -18,8 +18,8 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  title: "Yehonatan Arad — Software & QA Professional",
-  description: "Personal website of Yehonatan Arad, software developer and QA professional.",
+  title: "Yehonatan Arad — Software Developer",
+  description: "Personal website of Yehonatan Arad, software developer with 16 years of experience.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
