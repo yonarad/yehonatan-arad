@@ -40,9 +40,9 @@ const content = {
   en: {
     navWork: "Work", navContact: "Contact", switchLanguage: "עברית", homeLabel: "Yehonatan Arad home",
     intro: <>Software developer with <strong>16 years</strong> of experience building clear, reliable digital products.</>,
-    explore: "Explore", continue: "Continue", focus: ["Software development", "Product thinking", "Reliable delivery", "16 years of practice"],
+    explore: "Explore", continue: "Continue", focus: ["Mobileye", "ECI Telecom → Ribbon", "EMC² → Dell", "Independent products"],
     aboutTitle: <>Build it right.<br />Then make it <span className="accent">better.</span></>,
-    about: "I'm Yehonatan Arad, a software developer who enjoys shaping useful products, solving hard problems, and turning good ideas into reliable software.",
+    about: "I'm Yehonatan Arad, a software developer with experience across independent product work and large technology organizations, including Mobileye, ECI Telecom (now Ribbon), and EMC² / Dell. I enjoy shaping useful products, solving hard problems, and turning good ideas into reliable software.",
     years: "years building and improving digital products.",
     practiceTitle: "How I work.",
     practices: [["Software development", "Practical, dependable solutions that make the right thing feel effortless."], ["Engineering quality", "Thoughtful implementation that keeps software clear, resilient, and easy to evolve."], ["Product thinking", "Turning a real-world problem into a focused, useful experience."]],
@@ -53,9 +53,9 @@ const content = {
   he: {
     navWork: "עבודה", navContact: "יצירת קשר", switchLanguage: "English", homeLabel: "דף הבית של יהונתן ארד",
     intro: <>מפתח תוכנה עם <strong>16 שנות ניסיון</strong> בבניית מוצרים דיגיטליים ברורים, אמינים ונוחים לשימוש.</>,
-    explore: "היכרות", continue: "המשך", focus: ["פיתוח תוכנה", "חשיבה מוצרית", "מוצרים אמינים", "16 שנות ניסיון"],
+    explore: "היכרות", continue: "המשך", focus: ["Mobileye", "ECI Telecom → Ribbon", "EMC² → Dell", "מוצרים עצמאיים"],
     aboutTitle: <>בונים נכון.<br />ואז עושים את זה <span className="accent">טוב יותר.</span></>,
-    about: "אני יהונתן ארד, מפתח תוכנה שנהנה לבנות מוצרים שימושיים, לפתור בעיות מורכבות, ולהפוך רעיונות טובים לתוכנה אמינה.",
+    about: "אני יהונתן ארד, מפתח תוכנה עם ניסיון בעבודה עצמאית ובחברות טכנולוגיה גדולות, בהן Mobileye, ECI Telecom (כיום Ribbon), ו־EMC² / Dell. אני נהנה לבנות מוצרים שימושיים, לפתור בעיות מורכבות, ולהפוך רעיונות טובים לתוכנה אמינה.",
     years: "של בנייה ושיפור של מוצרים דיגיטליים.",
     practiceTitle: "איך אני עובד.",
     practices: [["פיתוח תוכנה", "פתרונות מעשיים ואמינים שהופכים את הדבר הנכון לפשוט לשימוש."], ["איכות הנדסית", "מימוש מדויק ששומר על תוכנה ברורה, יציבה וקלה להמשך פיתוח."], ["חשיבה מוצרית", "הפיכת בעיה מהעולם האמיתי לחוויה ממוקדת ושימושית."]],
