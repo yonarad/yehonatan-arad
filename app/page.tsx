@@ -32,11 +32,15 @@ function ExternalArrow() {
   );
 }
 
+function SectionNext({ href, label }: { href: string; label: string }) {
+  return <a className="section-next" href={href} aria-label={label}>{label} <span className="down-mark" aria-hidden="true" /></a>;
+}
+
 const content = {
   en: {
     navWork: "Work", navContact: "Contact", switchLanguage: "עברית", homeLabel: "Yehonatan Arad home",
     intro: <>Software developer with <strong>16 years</strong> of experience building clear, reliable digital products.</>,
-    explore: "Explore", focus: ["Software development", "Product thinking", "Reliable delivery", "16 years of practice"],
+    explore: "Explore", continue: "Continue", focus: ["Software development", "Product thinking", "Reliable delivery", "16 years of practice"],
     aboutTitle: <>Build it right.<br />Then make it <span className="accent">better.</span></>,
     about: "I'm Yehonatan Arad, a software developer who enjoys shaping useful products, solving hard problems, and turning good ideas into reliable software.",
     years: "years building and improving digital products.",
@@ -49,7 +53,7 @@ const content = {
   he: {
     navWork: "עבודה", navContact: "יצירת קשר", switchLanguage: "English", homeLabel: "דף הבית של יהונתן ארד",
     intro: <>מפתח תוכנה עם <strong>16 שנות ניסיון</strong> בבניית מוצרים דיגיטליים ברורים, אמינים ונוחים לשימוש.</>,
-    explore: "היכרות", focus: ["פיתוח תוכנה", "חשיבה מוצרית", "מוצרים אמינים", "16 שנות ניסיון"],
+    explore: "היכרות", continue: "המשך", focus: ["פיתוח תוכנה", "חשיבה מוצרית", "מוצרים אמינים", "16 שנות ניסיון"],
     aboutTitle: <>בונים נכון.<br />ואז עושים את זה <span className="accent">טוב יותר.</span></>,
     about: "אני יהונתן ארד, מפתח תוכנה שנהנה לבנות מוצרים שימושיים, לפתור בעיות מורכבות, ולהפוך רעיונות טובים לתוכנה אמינה.",
     years: "של בנייה ושיפור של מוצרים דיגיטליים.",
@@ -84,11 +88,11 @@ export default function Home() {
 
       <section className="ticker" aria-label={isHebrew ? "תחומי התמחות" : "Professional focus"}>{t.focus.map((item, index) => <span key={item} className="ticker-item">{index > 0 && <i />}{item}</span>)}</section>
 
-      <section id="about" className="about section"><div className="about-content"><h2>{t.aboutTitle}</h2><div className="about-grid"><p className="lead">{t.about}</p><aside className="fact-card"><span>16</span><p>{t.years}</p></aside></div></div></section>
+      <section id="about" className="about section"><div className="about-content"><h2>{t.aboutTitle}</h2><div className="about-grid"><p className="lead">{t.about}</p><aside className="fact-card"><span>16</span><p>{t.years}</p></aside></div><SectionNext href="#practice" label={t.continue} /></div></section>
 
-      <section className="practice section"><div className="practice-content"><h2>{t.practiceTitle}</h2><div className="practice-list">{t.practices.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+      <section id="practice" className="practice section"><div className="practice-content"><h2>{t.practiceTitle}</h2><div className="practice-list">{t.practices.map(([title, description]) => <article key={title}><h3>{title}</h3><p>{description}</p></article>)}</div><SectionNext href="#work" label={t.continue} /></div></section>
 
-      <section id="work" className="work"><div className="work-heading"><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div><article className="project"><div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div><div className="project-copy"><div className="project-kicker"><Image src="/hebsync-logo.png" alt="HebSync logo" width={112} height={112} className="hebsync-logo" /><p className="project-index">{t.projectIndex}</p></div><h2>Heb<span>Sync</span></h2><p className="project-subtitle">{t.projectSubtitle}</p><p className="project-description">{t.projectDescription}</p><a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">{t.projectLink} <ExternalArrow /></a></div></article></section>
+      <section id="work" className="work"><div className="work-heading"><h2>{t.workTitle}</h2><p>{t.workIntro}</p></div><article className="project"><div className="project-art" aria-hidden="true"><span>H</span><i /><i /><i /></div><div className="project-copy"><div className="project-kicker"><Image src="/hebsync-logo.png" alt="HebSync logo" width={112} height={112} className="hebsync-logo" /><p className="project-index">{t.projectIndex}</p></div><h2>Heb<span>Sync</span></h2><p className="project-subtitle">{t.projectSubtitle}</p><p className="project-description">{t.projectDescription}</p><a className="project-link" href="https://hebsync.org" target="_blank" rel="noreferrer">{t.projectLink} <ExternalArrow /></a></div></article><div className="work-next"><SectionNext href="#contact" label={t.continue} /></div></section>
 
       <section id="contact" className="contact section"><div className="contact-content"><h2>{t.contactTitle}</h2><a className="contact-email" href="mailto:yonarad@gmail.com" aria-label="Send email to yonarad@gmail.com"><MailIcon /></a><div className="social-links">{socialLinks.map((link) => <a href={link.href} key={link.label} target="_blank" rel="noreferrer" aria-label={link.label}><SocialIcon kind={link.icon} /></a>)}</div></div></section>
 
